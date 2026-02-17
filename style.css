@@ -1,0 +1,88 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #feecff;
+    padding: 10px;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h3 { text-align: center; color: #37071d; margin: 5px 0; }
+
+.calendar-header { flex-shrink: 0; margin-bottom: 10px; }
+
+.nav-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    flex-grow: 1; /* Fills remaining vertical space */
+    padding: 0 20px 20px 20px;
+    min-height: 0; /* Important for flex child scrolling */
+}
+
+#bank {
+    width: 280px;
+    background-color: #fdfde0;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #000;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.calendar-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.day-names {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+#calendar {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* Changed to 6 rows to prevent layout collapse */
+    grid-template-rows: repeat(6, 1fr); 
+    gap: 8px;
+}
+
+.day {
+    background: white;
+    border: 1px dashed #ccc;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 0.8rem;
+    min-height: 0; 
+    display: flex;
+    flex-direction: column;
+    /* Added these to ensure visibility */
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.02);
+    min-width: 0;
+}
+
+.day.empty { background-color: rgba(255,255,255,0.3); }
+
+/* Modal & Recipe styles */
+.recipe {
+    background-color: #f1c40f;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    cursor: grab;
+    font-size: 0.75rem;
+}
