@@ -25,3 +25,38 @@ h1 { text-align: center; color: #2c3e50; }
     border-radius: 5px; cursor: grab; font-size: 0.9em;
     color: #2c3e50; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+.input-area {
+    display: flex;
+    flex-direction: column; /* Puts the button under the input */
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+#recipeInput {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.input-area button {
+    padding: 8px;
+    background-color: #27ae60; /* A nice green color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background-color: #219150; /* Darkens slightly when you hover */
+}
+
+#detailsInput {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 60px; /* Makes it a bit taller than the name input */
+    font-family: inherit; /* Keeps the font matching */
+    resize: none; /* Prevents the user from stretching it weirdly */
+}
