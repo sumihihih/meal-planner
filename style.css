@@ -50,10 +50,11 @@ body {
 }
 
 .recipe { 
-    background: #f1c40f; 
+    background: hsl(47, 81%, 88%); 
     padding: 8px; 
     margin-top: 8px; 
     border-radius: 5px; 
+    text-align: center;
     cursor: grab; 
     font-size: 0.85em;
     color: #2c3e50; 
@@ -83,15 +84,16 @@ body {
 
 .input-area button {
     padding: 8px;
-    background-color: #27ae60; /* A nice green color */
-    color: white;
+    background-color: #84cbb1; /* A nice green color */
+    color: rgb(17, 13, 13);
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: 900;
 }
 
 .input-area button:hover {
-    background-color: #219150; /* Darkens slightly when you hover */
+    background-color: #cfdbd4; /* Darkens slightly when you hover */
 }
 
 #detailsInput {
@@ -228,16 +230,44 @@ h1 {
     font-weight: 100;
  }
 
-.nav-btn {
-    background: 4a4748; /* Slightly lighter than the header for contrast */
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white;
-    padding: 8px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s;
+.nav-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 10px;
 }
 
-.nav-btn:hover {
-    background: #4a4748;
+.cute-nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon {
+    width: 60px; /* Adjust size based on your preference */
+    height: auto;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Flip the second arrow to point right */
+.nav-icon.next {
+    transform: scaleX(-1);
+}
+
+/* Hover effects */
+.cute-nav-btn:hover .nav-icon.prev {
+    transform: scale(1.2); /* Grow slightly */
+}
+
+.cute-nav-btn:hover .nav-icon.next {
+    transform: scaleX(-1) scale(1.2); /* Grow AND stay flipped */
+}
+
+/* Click effect */
+.cute-nav-btn:active .nav-icon {
+    transform: scale(0.9);
 }
