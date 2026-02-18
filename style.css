@@ -27,7 +27,7 @@ body {
     background: rgb(239, 210, 210);
     padding: 15px;
     border-radius: 10px;
-    height: 80vh;
+    height: 70vh;
     overflow-y: auto;
     text-align: center;
 }
@@ -90,6 +90,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-weight: 900;
+    box-shadow: 4px 4px 4px rgb(164, 164, 164);
 }
 
 .input-area button:hover {
@@ -200,16 +201,12 @@ body {
 }
 
 #monthDisplay {
-    font-family: 'Georgia', sans-serif; /* You can change this to any font */
-    font-size: 2.5rem;                  /* Large enough to see the border clearly */
-    font-weight: 900;                   /* Thicker fonts look better with outlines */
-    color: rgb(239, 210, 210);                     /* The inside color of the letters */
-    
-    /* THE LETTER BORDER (STROKE) */
-    -webkit-text-stroke: 1.5px #837880;  /* Thickness and color (Gold) */
-    
-    /* Adds a slight glow to make the letters pop even more */
-    text-shadow: 2px 2px 4px rgba(44, 41, 41, 0.5); 
+    font-family: 'Playwrite AT', sans-serif; /* You can change this to any font */
+    font-size: 2 rem;                  /* Large enough to see the border clearly */
+    font-weight: 400;                   /* Thicker fonts look better with outlines */
+    color: rgb(129, 106, 106);
+    text-shadow: 2px 2px 4px rgba(103, 95, 95, 0.5); 
+    -webkit-text-stroke: 1.5px #332e31; 
     
     margin: 0;
     text-align: center;
