@@ -75,16 +75,27 @@ function addNewRecipe() {
 function handleDrop(e) {
     e.preventDefault();
     const recipeId = e.dataTransfer.getData("text");
-    const recipeElement = document.getElementById(recipeId);
+    const originalRecipe = document.getElementById(recipeId);
 
-    // Find the closest parent with the class 'day'
     let targetDay = e.target;
     if (!targetDay.classList.contains('day')) {
         targetDay = targetDay.closest('.day');
     }
 
-    if (recipeElement && targetDay) {
-        targetDay.appendChild(recipeElement);
+    if (originalRecipe && targetDay) {
+        // 1. Create a CLONE of the recipe
+        const recipeClone = originalRecipe.cloneNode(true);
+
+        // 2. Give the clone a new ID so it's unique
+        recipeClone.id = 'clone-' + Date.now();
+
+        // 3. Re-attach the click event to the clone so it still opens the modal
+        recipeClone.onclick = function () { showDetails(this); };
+
+        targetDay.appendChild(recipeClone);
+
+        // 4. Save the progress
+        saveAllData();
     }
 }
 
