@@ -16,8 +16,9 @@ h1 { text-align: center; color: #2c3e50; }
 .container { 
     display: flex; 
     gap: 20px; 
-    flex: 1; 
-    min-height: 0; /* Important: allows children to scroll instead of stretching */
+    padding: 20px;
+    height: calc(100vh - 120px);
+    margin-top: 10px:
 }
 
 #bank {
@@ -167,4 +168,49 @@ h1 { text-align: center; color: #2c3e50; }
     background-color: #ecf0f1;
     border-radius: 5px;
     margin: 0 5px; /* Adds a little gap between names */
+}
+
+.calendar-header {
+    background-color: #37071d; /* A deep, elegant color */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    position: sticky; /* Keeps it at the top while you work */
+    top: 0;
+    z-index: 100; /* Ensures it stays above the calendar boxes */
+}
+
+.calendar-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.nav-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+#monthDisplay {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
 }

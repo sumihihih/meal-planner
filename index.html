@@ -2,17 +2,19 @@
 <html>
 
 <head>
-    <title>Ramadan Meal Planner</title>
+    <title>Monthly Meal Planner</title> 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>🌙 Ramadan Recipe Planner</h1>
-
-    <div style="text-align: center; margin-bottom: 20px;">
-        <button onclick="changeMonth(-1)">⬅️ Previous</button>
-        <button onclick="changeMonth(1)">Next ➡️</button>
+ <div class="calendar-header">
+        <h1>Monthly Meal Planner</h1>
+        <div class="nav-controls">
+            <button onclick="changeMonth(-1)" class="nav-btn">⬅️</button>
+            <h2 id="monthDisplay">February 2026</h2>
+            <button onclick="changeMonth(1)" class="nav-btn">➡️</button>
+        </div>
     </div>
 
     <div class="container">
