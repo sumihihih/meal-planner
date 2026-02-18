@@ -22,13 +22,13 @@ h1 { text-align: center; color: #2c3e50; }
 
 #bank {
     width: 250px;
+    min-width: 250px; /* Forces the sidebar to keep its shape */
+    flex-shrink: 0;   /* Prevents the calendar from squishing it */
     background: white;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto; /* Scroll recipes if you have too many */
+    height: 80vh;
+    overflow-y: auto;
 }
 
 /* 3. The Grid Magic */
@@ -51,9 +51,22 @@ h1 { text-align: center; color: #2c3e50; }
 }
 
 .recipe { 
-    background: #f1c40f; padding: 10px; margin-top: 10px; 
-    border-radius: 5px; cursor: grab; font-size: 0.9em;
-    color: #2c3e50; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: #f1c40f; 
+    padding: 8px; 
+    margin-top: 8px; 
+    border-radius: 5px; 
+    cursor: grab; 
+    font-size: 0.85em;
+    color: #2c3e50; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    /* THE TRUNCATION TRICK */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Change this to 1 if you only want one line */
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
 }
 
 .input-area {
@@ -107,9 +120,23 @@ h1 { text-align: center; color: #2c3e50; }
     margin: 15% auto;
     padding: 20px;
     border-radius: 12px;
-    width: 320px;
+    width: 350px; /* Slightly wider to give text more room */
+    max-width: 90%; /* Safety for mobile screens */
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    
+    /* ADD THIS to handle child elements like h2 */
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+}
+
+#modalTitle {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    /* This ensures the title wraps to the next line instead of one long line */
+    white-space: normal; 
+    line-height: 1.2;
 }
 
 .close-btn {
