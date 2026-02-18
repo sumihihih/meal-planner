@@ -165,7 +165,7 @@ body {
         color: rgb(129, 106, 106);
     text-shadow: 2px 2px 4px rgba(103, 95, 95, 0.5); 
     -webkit-text-stroke: 1.5px #332e31; 
-    font-family: 'Playwrite AT' , cursive;
+    font-family: "Playwrite AT" , cursive;
     font-size: 1rem;
     font-weight: 400;
 }
@@ -201,7 +201,7 @@ body {
 }
 
 #monthDisplay {
-    font-family: 'Playwrite AT', sans-serif; /* You can change this to any font */
+    font-family: "Playwrite AT", cursive; /* You can change this to any font */
     font-size: 2 rem;                  /* Large enough to see the border clearly */
     font-weight: 400;                   /* Thicker fonts look better with outlines */
     color: rgb(129, 106, 106);
@@ -219,7 +219,7 @@ h1 {
     color: rgb(129, 106, 106);
     text-shadow: 2px 2px 4px rgba(103, 95, 95, 0.5); 
     -webkit-text-stroke: 1.5px #332e31; 
-    font-family: 'Playwrite AT' , cursive;
+    font-family: "Playwrite AT" , cursive;
     font-size: 2.5rem;
     font-weight: 400;
  }
@@ -229,7 +229,7 @@ h1 {
     color: rgb(129, 106, 106);
     text-shadow: 2px 2px 4px rgba(103, 95, 95, 0.5); 
     -webkit-text-stroke: 1.5px #332e31; 
-    font-family: 'Playwrite AT' , cursive;
+    font-family: "Playwrite AT" , cursive;
     font-weight: 100;
  }
 
