@@ -161,6 +161,12 @@ body {
     font-weight: bold;
     color: #2c3e50;
     padding-bottom: 10px;
+        color: rgb(129, 106, 106);
+    text-shadow: 2px 2px 4px rgba(103, 95, 95, 0.5); 
+    -webkit-text-stroke: 1.5px #332e31; 
+    font-family: 'Playwrite AT' , cursive;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .day-names div {
@@ -251,6 +257,12 @@ h1 {
     width: 60px; /* Adjust size based on your preference */
     height: auto;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+/* This makes it a Golden/Yellow color to match your theme */
+    filter: sepia(100%) saturate(100%) hue-rotate(10deg) brightness(1.2);
+    
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
 }
 
 /* Flip the second arrow to point right */
