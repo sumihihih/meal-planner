@@ -14,8 +14,13 @@ function renderCalendar() {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
 
-    // Display Month and Year in the H1 or a new header
-    document.querySelector('h1').innerText = `🌙 ${currentDate.toLocaleString('default', { month: 'long' })} ${year}`;
+    // This targets ONLY the text between the arrows
+    const monthName = currentDate.toLocaleString('default', { month: 'long' });
+    const monthDisplay = document.getElementById('monthDisplay');
+
+    if (monthDisplay) {
+        monthDisplay.innerText = `${monthName} ${year}`;
+    }
 
     // Calculate days in month
     const firstDay = new Date(year, month, 1).getDay();
@@ -59,7 +64,7 @@ function addNewRecipe() {
     newRecipe.setAttribute('data-info', detailsInput.value);
 
     newRecipe.ondragstart = (e) => e.dataTransfer.setData("text", e.target.id);
-    newRecipe.onclick = function() { showDetails(this); };
+    newRecipe.onclick = function () { showDetails(this); };
 
     document.getElementById('bank').appendChild(newRecipe);
     nameInput.value = "";
@@ -71,7 +76,7 @@ function handleDrop(e) {
     e.preventDefault();
     const recipeId = e.dataTransfer.getData("text");
     const recipeElement = document.getElementById(recipeId);
-    
+
     // Find the closest parent with the class 'day'
     let targetDay = e.target;
     if (!targetDay.classList.contains('day')) {
@@ -98,7 +103,7 @@ function deleteCurrentRecipe() {
 
 function setupExistingRecipes() {
     document.querySelectorAll('.recipe').forEach(r => {
-        r.onclick = function() { showDetails(this); };
+        r.onclick = function () { showDetails(this); };
         r.ondragstart = (e) => e.dataTransfer.setData("text", e.target.id);
     });
 }

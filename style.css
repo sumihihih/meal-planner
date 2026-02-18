@@ -1,7 +1,7 @@
 /* 1. Prevent the whole page from scrolling */
 body { 
     font-family: 'Segoe UI', sans-serif; 
-    background-color: #f0f2f5; 
+    background-color: #f9f9f8; 
     padding: 20px; 
     height: 100vh; 
     margin: 0; 
@@ -10,26 +10,26 @@ body {
     box-sizing: border-box;
 }
 
-h1 { text-align: center; color: #2c3e50; }
 
 /* 2. Make the container fill the remaining screen height */
 .container { 
     display: flex; 
     gap: 20px; 
     padding: 20px;
-    height: calc(100vh - 120px);
-    margin-top: 10px:
+    height: 75vh;
+    align-items: stretch;
 }
 
 #bank {
     width: 250px;
     min-width: 250px; /* Forces the sidebar to keep its shape */
     flex-shrink: 0;   /* Prevents the calendar from squishing it */
-    background: white;
+    background: rgb(239, 210, 210);
     padding: 15px;
     border-radius: 10px;
     height: 80vh;
     overflow-y: auto;
+    text-align: center;
 }
 
 /* 3. The Grid Magic */
@@ -43,12 +43,10 @@ h1 { text-align: center; color: #2c3e50; }
 
 .day { 
     background: white; 
-    border: 2px dashed #bdc3c7; 
-    padding: 8px; 
+    border: 1px dashed #ccc; 
+    padding: 5px; 
     border-radius: 8px;
-    font-size: 0.9em;
-    min-height: 0; /* Allows boxes to shrink to fit the screen */
-    overflow-y: auto; /* If you drop too many recipes in one day, it scrolls */
+    min-height: 0; /* Allows boxes to shrink to fit the screen */ /* If you drop too many recipes in one day, it scrolls */
 }
 
 .recipe { 
@@ -171,46 +169,75 @@ h1 { text-align: center; color: #2c3e50; }
 }
 
 .calendar-header {
-    background-color: #37071d; /* A deep, elegant color */
-    color: white;
-    padding: 15px 0;
+    background-color: #dedddd; /* That nice deep burgundy */
+    color: #ffffff;
+    padding: 20px 0;
     text-align: center;
     width: 100%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    position: sticky; /* Keeps it at the top while you work */
-    top: 0;
-    z-index: 100; /* Ensures it stays above the calendar boxes */
+    box-shadow: 0 4px 10px rgba(6, 6, 3, 0.3);
 }
 
 .calendar-header h1 {
     margin: 0;
     font-size: 1.8rem;
-    letter-spacing: 1px;
+    letter-spacing: 10px;
 }
 
 .nav-controls {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    margin-top: 10px;
+    gap: 20px; /* Space between arrows and text */
+    margin-top: 15px;
 }
 
 #monthDisplay {
+    font-family: 'Georgia', sans-serif; /* You can change this to any font */
+    font-size: 2.5rem;                  /* Large enough to see the border clearly */
+    font-weight: 900;                   /* Thicker fonts look better with outlines */
+    color: rgb(239, 210, 210);                     /* The inside color of the letters */
+    
+    /* THE LETTER BORDER (STROKE) */
+    -webkit-text-stroke: 1.5px #837880;  /* Thickness and color (Gold) */
+    
+    /* Adds a slight glow to make the letters pop even more */
+    text-shadow: 2px 2px 4px rgba(44, 41, 41, 0.5); 
+    
     margin: 0;
-    font-size: 1.2rem;
-    font-weight: 400;
+    text-align: center;
 }
 
+/* monthly meal planner */
+
+h1 {
+    text-align: center; 
+    color: rgb(129, 106, 106);
+    text-shadow: 2px 2px 4px rgba(103, 95, 95, 0.5); 
+    -webkit-text-stroke: 1.5px #332e31; 
+    font-family: 'Playwrite AT' , cursive;
+    font-size: 2.5rem;
+    font-weight: 400;
+ }
+
+ h3 {
+    text-align: center; 
+    color: rgb(129, 106, 106);
+    text-shadow: 2px 2px 4px rgba(103, 95, 95, 0.5); 
+    -webkit-text-stroke: 1.5px #332e31; 
+    font-family: 'Playwrite AT' , cursive;
+    font-weight: 100;
+ }
+
 .nav-btn {
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
+    background: 4a4748; /* Slightly lighter than the header for contrast */
+    border: 1px solid rgba(255,255,255,0.2);
     color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 8px 15px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
 .nav-btn:hover {
-    background: rgba(255, 255, 255, 0.4);
+    background: #4a4748;
 }
