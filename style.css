@@ -1,7 +1,24 @@
-body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; padding: 20px; }
+/* 1. Prevent the whole page from scrolling */
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    background-color: #f0f2f5; 
+    padding: 20px; 
+    height: 100vh; 
+    margin: 0; 
+    display: flex; 
+    flex-direction: column; 
+    box-sizing: border-box;
+}
+
 h1 { text-align: center; color: #2c3e50; }
 
-.container { display: flex; gap: 30px; align-items: flex-start; }
+/* 2. Make the container fill the remaining screen height */
+.container { 
+    display: flex; 
+    gap: 20px; 
+    flex: 1; 
+    min-height: 0; /* Important: allows children to scroll instead of stretching */
+}
 
 #bank {
     width: 250px;
@@ -9,22 +26,28 @@ h1 { text-align: center; color: #2c3e50; }
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    height: 80vh; /* 80% of the screen height */
-    overflow-y: auto; /* Adds a scrollbar only when needed */
-    position: sticky; /* Keeps it visible while you scroll the calendar */
-    top: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Scroll recipes if you have too many */
 }
 
+/* 3. The Grid Magic */
 #calendar { 
     display: grid; 
     grid-template-columns: repeat(7, 1fr); 
-    gap: 15px; flex-grow: 1; 
+    grid-template-rows: repeat(5, 1fr); /* Forces exactly 5 rows */
+    gap: 10px; 
+    flex-grow: 1; 
 }
 
 .day { 
-    background: white; border: 2px dashed #bdc3c7; 
-    min-height: 120px; padding: 10px; border-radius: 8px;
-    font-weight: bold; color: #7f8c8d;
+    background: white; 
+    border: 2px dashed #bdc3c7; 
+    padding: 8px; 
+    border-radius: 8px;
+    font-size: 0.9em;
+    min-height: 0; /* Allows boxes to shrink to fit the screen */
+    overflow-y: auto; /* If you drop too many recipes in one day, it scrolls */
 }
 
 .recipe { 

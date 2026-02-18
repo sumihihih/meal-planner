@@ -71,7 +71,16 @@ function handleDrop(e) {
     e.preventDefault();
     const recipeId = e.dataTransfer.getData("text");
     const recipeElement = document.getElementById(recipeId);
-    if (recipeElement) this.appendChild(recipeElement);
+    
+    // Find the closest parent with the class 'day'
+    let targetDay = e.target;
+    if (!targetDay.classList.contains('day')) {
+        targetDay = targetDay.closest('.day');
+    }
+
+    if (recipeElement && targetDay) {
+        targetDay.appendChild(recipeElement);
+    }
 }
 
 function showDetails(recipeElement) {

@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Ramadan Meal Planner</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <h1>🌙 Ramadan Recipe Planner</h1>
 
+    <div style="text-align: center; margin-bottom: 20px;">
+        <button onclick="changeMonth(-1)">⬅️ Previous</button>
+        <button onclick="changeMonth(1)">Next ➡️</button>
+    </div>
+
     <div class="container">
         <div id="bank">
             <h3>Saved Recipes</h3>
-            
+
             <div class="input-area">
                 <input type="text" id="recipeInput" placeholder="Recipe Name (e.g. Biryani)">
                 <textarea id="detailsInput" placeholder="TikTok link or ingredients..."></textarea>
@@ -41,4 +48,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
