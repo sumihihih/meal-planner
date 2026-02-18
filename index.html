@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Ramadan Meal Planner</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
     <h1>🌙 Ramadan Recipe Planner</h1>
 
     <div class="container">
         <div id="bank">
             <h3>Saved Recipes</h3>
+            
             <div class="input-area">
                 <input type="text" id="recipeInput" placeholder="Recipe Name (e.g. Biryani)">
-                <textarea id="detailsInput" placeholder="Details (Ingredients or TikTok link...)"></textarea>
+                <textarea id="detailsInput" placeholder="TikTok link or ingredients..."></textarea>
                 <button onclick="addNewRecipe()">Add Recipe</button>
             </div>
+
             <div class="recipe" draggable="true" id="r1">🥟 Crispy Samosas</div>
             <div class="recipe" draggable="true" id="r2">🍹 Date Smoothie</div>
             <div class="recipe" draggable="true" id="r3">🍲 Lentil Soup</div>
@@ -25,7 +26,19 @@
         <div id="calendar"></div>
     </div>
 
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <hr>
+            <p id="modalDetails"></p>
+            <div class="modal-buttons">
+                <button onclick="deleteCurrentRecipe()" class="delete-btn">Delete Recipe</button>
+                <button onclick="closeModal()" class="close-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
-
 </html>
